@@ -1,0 +1,70 @@
+/* Layout structure */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #1f1f1f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content */
+.content {
+  flex-grow: 1;
+  margin-left: 250px;
+  padding: 2rem;
+  background-color: #f9fafb; /* Light mode default */
+  color: #1e1e1e;
+  width: calc(100vw - 250px);
+  overflow-x: hidden;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Dark Mode */
+.dark-theme .content {
+  background-color: #181818;
+  color: #e0e0e0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin-top: 20px;
+  width: 80%;
+  padding: 10px;
+  background: #3a3b3c;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  background: #4e4f50;
+  transform: scale(1.05);
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  
+  .content {
+    margin-left: 200px;
+  }
+}

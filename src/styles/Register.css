@@ -1,0 +1,129 @@
+/* Full-page centering */
+html, body, #root {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Dark Mode Support */
+.dark-theme {
+  background-color: #181818;
+  color: white;
+}
+
+/* Container */
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Registration Box */
+.register-box {
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Dark Mode - Registration Box */
+.dark-theme .register-box {
+  background: #222;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth hover effect */
+.register-box:hover {
+  transform: scale(1.02);
+}
+
+/* Input Fields */
+.register-box input, .register-box select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.2s ease-in-out;
+}
+
+/* Input focus effect */
+.register-box input:focus, .register-box select:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* Dark Mode - Inputs */
+.dark-theme .register-box input,
+.dark-theme .register-box select {
+  background: #333;
+  border-color: #555;
+  color: white;
+}
+
+/* Button */
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Button Hover */
+.register-box button:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Error Message */
+.message {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* Login Redirect */
+.login-redirect {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* Login Button */
+.login-button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.login-button:hover {
+  text-decoration: underline;
+  color: #2563eb;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .register-box {
+    width: 90%;
+  }
+}

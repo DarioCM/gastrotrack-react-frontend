@@ -1,0 +1,62 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* Global Theme */
+body {
+  background-color: #f9fafb; /* Soft white */
+  color: #1e1e1e; /* Dark gray text */
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Light/Dark Mode Support */
+body.dark-mode {
+  background-color: #121212; /* Dark mode background */
+  color: white;
+}
+
+/* Links */
+a {
+  color: #1e1e1e;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #555; /* Soft gray hover */
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+button:hover {
+  background-color: #333;
+  transform: scale(1.05); /* Slight hover effect */
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}

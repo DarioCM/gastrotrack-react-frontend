@@ -1,0 +1,120 @@
+/* Full-page centering */
+html, body, #root {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Dark Mode Support */
+.dark-theme {
+  background-color: #181818;
+  color: white;
+}
+
+/* Centering the login box */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Login Box Styling */
+.login-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px; /* Slightly larger */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Dark Mode - Login Box */
+.dark-theme .login-box {
+  background: #222;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth hover effect */
+.login-box:hover {
+  transform: scale(1.02);
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.2s ease-in-out;
+}
+
+/* Input focus effect */
+input:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* Dark Mode - Inputs */
+.dark-theme input {
+  background: #333;
+  border-color: #555;
+  color: white;
+}
+
+/* Login Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #004494;
+  transform: scale(1.05);
+}
+
+/* Register Text */
+.register-text {
+  color: #4b5563;
+  margin-top: 16px;
+  font-size: 0.875rem;
+}
+
+/* Register Button */
+.register-button {
+  color: #3b82f6;
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.register-button:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .login-box {
+    width: 90%;
+  }
+}

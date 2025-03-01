@@ -1,0 +1,92 @@
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #1e1e1e; /* Dark theme */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Gastrotrack Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Navigation List */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1; /* Pushes logout button down */
+}
+
+.nav-links li {
+  margin-bottom: 15px;
+}
+
+/* Navigation Links */
+.nav-links li a {
+  text-decoration: none;
+  color: #b0b3b8;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.2s ease-in-out;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: #343a40;
+  color: white;
+}
+
+/* Logout Button */
+.logout-container {
+  margin-top: auto; /* Push to bottom */
+}
+
+.logout-button {
+  background: #ff3b30;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+  background: #e63946;
+}
+
+.logout-button {
+  background: #3a3b3c; /* Subtle dark gray */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between icon and text */
+  transition: background 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+  background: #4e4f50;
+}
+
+.icon {
+  margin-right: 5px;
+}
