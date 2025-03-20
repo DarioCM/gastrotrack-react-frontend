@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import ProtectedRoute from './components/ProtectedRoute.tsx';
 import Dashboard from './pages/Dashboard.tsx';
 import DailyDietLogs from './pages/DailyDietLogs.tsx';
+import FoodSymptomLogs from './pages/FoodSymptomLogs.tsx';
 
 
 createRoot(document.getElementById('root')!).render(
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')!).render(
           <Route element={<App />}> {/* Navbar is inside App */}
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/daily-diet-logs" element={<DailyDietLogs />} />
+            <Route path="/food-symptom-logs" element={<FoodSymptomLogs />} />            
           </Route>
         </Route>
        
