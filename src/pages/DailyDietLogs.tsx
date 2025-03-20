@@ -5,28 +5,21 @@ const API_URL = "http://localhost:8085/api/v1/daily-diet-logs";
 const TOKEN = localStorage.getItem("token");
 
 interface DailyDietLog {
-    id: number;
+    id: string;
     date: string;
-    typeMeal: string;
     meals: string;
+    typeMeal: string;
     notes: string;
 }
-
-/*
-            "id": "d57fe229-5463-4e4b-9e62-8f68208117d8",
-            "userId": "2bc8332f-50b1-4f1b-a3ed-0dcae3976a16",
-            "date": "2023-10-01",
-            "meals": "Chicken",
-            "typeMeal": "Dinner",
-            "notes": "Feel bad."
-*/
 
 const DailyDietLogs = () => {
     const [logs, setLogs] = useState<DailyDietLog[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [page, setPage] = useState<number>(0);
-    const pageSize = 5; 
+    const [totalPages, setTotalPages] = useState<number>(1);
+    const [isLastPage, setIsLastPage] = useState<boolean>(false);
+    const pageSize = 7; // Number of items per page
 
     useEffect(() => {
         const fetchLogs = async () => {
@@ -48,6 +41,8 @@ const DailyDietLogs = () => {
 
                 const data = await response.json();
                 setLogs(data.content);
+                setTotalPages(data.totalPages);
+                setIsLastPage(data.last); // Update isLastPage based on API response
             } catch (error: any) {
                 setError(error.message);
             } finally {
@@ -58,16 +53,14 @@ const DailyDietLogs = () => {
         fetchLogs();
     }, [page]);
 
-
     const formatDate = (dateStr: string) => {
         const date = new Date(dateStr);
-        return date.toLocaleDateString("en-US", { 
+        return date.toLocaleDateString("en-US", {
             weekday: "long", // Monday, Tuesday, etc.
             day: "numeric", // 7
-            month: "long" // September
+            month: "long", // September
         });
     };
-
 
     return (
         <div className="content">
@@ -106,9 +99,10 @@ const DailyDietLogs = () => {
                         >
                             ◀ Previous
                         </button>
-                        <span>Page {page + 1}</span>
+                        <span>Page {page + 1} of {totalPages}</span>
                         <button
                             onClick={() => setPage(page + 1)}
+                            disabled={isLastPage} // Disable "Next" button when last page is reached
                             className="page-button"
                         >
                             Next ▶
